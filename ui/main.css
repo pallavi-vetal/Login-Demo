@@ -1,0 +1,140 @@
+body{
+	background-color:#fff;
+	height: 100%
+
+}	
+
+@keyframes backAnimation {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-webkit-keyframes backAnimation {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-ms-keyframes backAnimation {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+@-moz-keyframes backAnimation {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+
+@keyframes backAnimationn {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}
+@-webkit-keyframes backAnimationn {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}
+@-ms-keyframes backAnimationn {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}
+@-moz-keyframes backAnimationn {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}
+
+
+#myanimation{
+	height: 100%;
+	background-image: url(images/clouds.jpg);
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+	background-repeat:repeat-y;
+	animation: backAnimation 5s linear infinite;
+	-ms-animation: backAnimation 5s linear infinite;
+	-moz-animation: backAnimation 5s linear infinite;
+	-webkit-animation: backAnimation 5s linear infinite;
+}
+
+#bg1{
+	position:fixed;
+	z-index:50;
+	top:0;
+	left:10px;
+	width:100%;
+	height:100%;
+	background:url(images/balloon-2.png);
+	overflow: hidden;
+
+	opacity: 0.8;
+	
+	animation: backAnimationn 5s linear infinite;
+	-ms-animation: backAnimationn 5s linear infinite;
+	-moz-animation: backAnimationn 5s linear infinite;
+	-webkit-animation: backAnimationn 5s linear infinite;
+	animation-direction: alternate-reverse;
+
+}
+
+ #bg1 .container {
+	position:fixed;
+	top:20px;
+	
+	width: 100%;
+	height: 80%;
+	right: 0;
+	left: 0;
+	text-align:center;
+	z-index:49;
+}
+
+
+
+
+.form-top {
+	overflow: hidden;
+	padding: 0 25px 15px 25px;
+	background: #444;
+	background-color:rgba(0, 0, 0, 0.35)
+	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+	text-align: left;
+	height: 95px;
+}
+
+.form-top-left {
+	float: left;
+	width: 75%;
+	padding-top: 5px;
+	margin-top: 10%;
+}
+
+.form-top-left h3 { margin-top: 0; color: #fff; }
+.form-top-left p { opacity: 0.8; color: #fff; }
+
+.form-top-right {
+	float: left;
+	width: 25%;
+	padding-top: 5px;
+	font-size: 66px;
+	color: #fff;
+	line-height: 100px;
+	text-align: right;
+	opacity: 0.3;
+}
+
+.form-bottom {
+	padding: 25px 25px 30px 25px;
+	background: #000000;
+	background: rgba(0, 0, 0, 0.33);
+	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	text-align: left;
+	
+	height: 100%;
+}
+
+.form-bottom form textarea {
+	height: 100px;
+}
+
+
+
+.form-bottom form .input-error {
+	border-color: #de615e;
+}
