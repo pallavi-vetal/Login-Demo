@@ -31,7 +31,7 @@ app.get('/submit',function(req,res){
                
                if(req.query.pwd!=req.query.pwd2){
                 
-                res.send("password do not match.Go back and reenter")}
+                res.sendFile(path.join(__dirname, 'ui', 'failure.html'));}
                 else{
  connection.query("INSERT INTO users (fname,lname,email,pwd,username)values('"+req.query.fname+"','"+req.query.lname+"','"+req.query.email+"','"+req.query.pwd+"','"+req.query.username+"') ",function(err) {
        
@@ -40,8 +40,8 @@ app.get('/submit',function(req,res){
          if(err){
         return res.send(err);
     } else{
-      res.send("success");
-       
+      res.sendFile(path.join(__dirname, 'ui', 'success.html'));
+      
     }   
 
     });
@@ -55,24 +55,27 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ui/main.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.css'));
+  res.sendFile(path.join(__dirname, 'ui/CSS', 'main.css'));
 });
 app.get('/ui/main1.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main1.css'));
+  res.sendFile(path.join(__dirname, 'ui/CSS', 'main1.css'));
+});
+app.get('/scripts/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/scripts', 'main.js'));
+});
+app.get('/scripts/skrollr.min.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/scripts', 'skrollr.min.js'));
 });
 
-app.get('/ui/images/clouds.jpg', function (req, res) {
+app.get('/images/clouds.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/images', 'clouds'));
 });
 
-app.get('/ui/images/balloon-2.png', function (req, res) {
+app.get('/images/balloon-2.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/images', 'balloon-2.png'));
 });
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
 app.get('/ui/require.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'require.js'));
+  res.sendFile(path.join(__dirname, 'ui/scripts', 'require.js'));
 });
 app.get('/cancel1', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'cancel.html'));
